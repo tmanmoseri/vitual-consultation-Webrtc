@@ -1,0 +1,13 @@
+<ion-content>
+
+    <div>
+      <video #local_video [autoplay]="true" id="localVideo" [muted]="true"></video>
+      <video #received_video [autoplay]="true"></video>
+    </div>
+   
+    <ion-button mat-raised-button color="primary" (click)="startLocalVideo()" [disabled]="localVideoActive">Start Local</ion-button>
+<ion-button mat-raised-button color="primary" (click)="pauseLocalVideo()" [disabled]="!localVideoActive">Stop Local</ion-button>
+<ion-button mat-raised-button color="primary" (click)="call()" [disabled]="inCall || !localVideoActive">Call</ion-button>
+<ion-button mat-raised-button color="primary" (click)="hangUp()" [disabled]="!inCall">HangUp</ion-button>
+  
+  </ion-content>
